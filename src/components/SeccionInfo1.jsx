@@ -6,11 +6,12 @@ export default function Seccioninfo1() {
        <section className="seccion-una-plataforma1">
          <div className="container-una-plataforma1">
          <div className="una-plataforma-contenido1">
-           <h2>Una plataforma para hablar sin temor</h2>
+           <h2>Un espacio para expresar lo que importa</h2>
            <p>
-             Akusete nace para proteger lo más importante: tu seguridad. Es un canal anónimo 
-             y confidencial donde puedes reportar situaciones de riesgo dentro del entorno universitario
-              sin exponerte. Nuestra misión es que ningún estudiante sienta que debe guardar silencio.
+            Akusete es una plataforma creada para fortalecer la seguridad y el bienestar dentro
+             del entorno universitario. Aquí puedes reportar situaciones que merecen atención, 
+             con la confianza de que tu voz será tomada en serio. Nuestro compromiso es construir
+              una comunidad más segura, donde hablar sea parte del cambio.
                
            </p>
          </div>
