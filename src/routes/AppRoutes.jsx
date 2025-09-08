@@ -5,6 +5,7 @@ import Login from '../pages/Login'
 import Register from '../pages/Register'
 import CrearTicket from '../pages/CrearTicket'
 import Tickets from '../pages/Tickets'
+import Usuario from '../pages/Usuario'
 
 export default function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ export default function AppRoutes() {
       <Route path="/que-es-akusete" element={<QueEsAkusete />} />
       <Route path="/login" element={<Login />} />
       <Route path="/registro" element={<Register />} />
+      <Route path="/usuario" element={<Usuario />} />
       <Route path="/crear-ticket" element={<CrearTicket />} />
       <Route path="/tickets" element={<Tickets />} />
     </Routes>

@@ -1,0 +1,392 @@
+/* perfil.css */
+.perfil-seccion {
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #f8fafc;
+}
+
+.perfil-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.perfil-header {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  gap: 2rem;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.avatar-image:hover {
+  transform: scale(1.05);
+}
+
+.avatar-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease;
+}
+
+.avatar-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.usuario-info h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.usuario-info .email {
+  margin: 0 0 0.25rem 0;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.usuario-info .username {
+  margin: 0 0 0.25rem 0;
+  opacity: 0.8;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.usuario-info .tipo-usuario {
+  margin: 0 0 0.5rem 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.usuario-info .fecha-registro {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.perfil-content {
+  padding: 2rem;
+}
+
+.perfil-acciones {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.boton-editar,
+.boton-contrasena,
+.boton-cerrar-sesion,
+.boton-guardar,
+.boton-cancelar,
+.boton-actualizar {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.boton-editar {
+  background: #3b82f6;
+  color: white;
+}
+
+.boton-editar:hover {
+  background: #2563eb;
+}
+
+.boton-contrasena {
+  background: #6366f1;
+  color: white;
+}
+
+.boton-contrasena:hover {
+  background: #5855eb;
+}
+
+.boton-cerrar-sesion {
+  background: #ef4444;
+  color: white;
+}
+
+.boton-cerrar-sesion:hover {
+  background: #dc2626;
+}
+
+.boton-guardar {
+  background: #10b981;
+  color: white;
+}
+
+.boton-guardar:hover {
+  background: #059669;
+}
+
+.boton-cancelar {
+  background: #6b7280;
+  color: white;
+}
+
+.boton-cancelar:hover {
+  background: #5b6472;
+}
+
+.boton-actualizar {
+  background: #8b5cf6;
+  color: white;
+}
+
+.boton-actualizar:hover {
+  background: #7c3aed;
+}
+
+.perfil-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.form-group input {
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.form-group input:disabled {
+  background-color: #f9fafb;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.input-disabled {
+  background-color: #f9fafb !important;
+  color: #6b7280 !important;
+}
+
+.input-help {
+  color: #6b7280;
+  font-size: 0.75rem;
+  margin-top: -0.25rem;
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.form-group input.error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.submit-error {
+  background: #fef2f2;
+  color: #ef4444;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #fecaca;
+  margin-top: 1rem;
+}
+
+.mensaje-exito {
+  background: #f0fdf4;
+  color: #059669;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #bbf7d0;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.cargando {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.125rem;
+  color: #6b7280;
+}
+
+/* Modal para cambio de contraseña */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contrasena {
+  background: white;
+  border-radius: 12px;
+  padding: 0;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #374151;
+  flex: 1;
+}
+
+.modal-cerrar {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.modal-cerrar:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.contrasena-form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modal-acciones {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .perfil-seccion {
+    padding: 1rem;
+  }
+  
+  .perfil-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .usuario-info h1 {
+    font-size: 1.5rem;
+  }
+  
+  .perfil-acciones {
+    flex-direction: column;
+  }
+  
+  .modal-contrasena {
+    width: 95%;
+  }
+  
+  .contrasena-form {
+    padding: 1.5rem;
+  }
+  
+  .modal-acciones {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .avatar-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .usuario-info h1 {
+    font-size: 1.25rem;
+  }
+  
+  .perfil-content {
+    padding: 1rem;
+  }
+}
