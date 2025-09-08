@@ -1,0 +1,103 @@
+.seccion-final {
+  position: relative;
+  background: linear-gradient(145deg, #444BFF, #c2d0ff);
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.iconos-flotantes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.icono {
+  position: absolute;
+  width: 40px;
+  opacity: 0.6;
+}
+
+.flotante-1 {
+  top: 80%;
+  left: 20%;
+  animation: flotar1 8s ease-in-out infinite;
+}
+
+.flotante-2 {
+  top: 90%;
+  left: 70%;
+  animation: flotar2 10s ease-in-out infinite;
+}
+
+@keyframes flotar1 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-60px) rotate(10deg); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes flotar2 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-90px) rotate(-15deg); }
+  100% { transform: translateY(0); }
+}
+
+.texto-final {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.frase-destacada {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid white;
+  animation: escribir 4s steps(40, end), parpadeo .75s step-end infinite;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .frase-destacada {
+    font-size: 1.3rem;
+    white-space: normal;
+    animation: none;
+    border: none;
+  }
+
+  .frase-destacada span::after {
+    content: '|';
+    animation: parpadeo 0.75s step-end infinite;
+  }
+}
+
+@keyframes escribir {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes parpadeo {
+  50% { border-color: transparent }
+}
+
+.firma {
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.firma a {
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.firma a:hover {
+  color: #ffed90;
+}

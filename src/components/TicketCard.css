@@ -1,0 +1,157 @@
+.tarjeta-ticket {
+  background: #dde6ff;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-ticket:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-ticket-header {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #c2d0ff;
+}
+
+.ticket-titulo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #191650;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.ticket-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.priority-badge,
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: #c2d0ff;
+  color: #332ad8;
+}
+
+.ticket-description {
+  background: #ECF1FF;
+  padding: 12px;
+  border-radius: 6px;
+  color: #272689;
+  line-height: 1.5;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1rem;
+  min-height: 4rem;
+}
+
+.ticket-meta {
+  margin-bottom: 1rem;
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.meta-row:last-child {
+  border-bottom: none;
+}
+
+.tags-row {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tags-row .meta-label {
+  margin-bottom: 0.5rem;
+}
+
+.meta-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #2a25ae;
+  flex-shrink: 0;
+}
+
+.meta-value {
+  font-size: 0.9rem;
+  color: #191650;
+  font-weight: 500;
+  text-align: right;
+}
+
+/* Para el texto de fecha original del TicketCard simple */
+.p-fecha {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #2a25ae;
+  margin-bottom: 0.5rem;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #dbeafe;
+  color: #1e40af;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tarjeta-ticket {
+    padding: 1rem;
+  }
+  
+  .meta-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+  
+  .meta-value {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .tarjeta-ticket {
+    padding: 0.75rem;
+  }
+}

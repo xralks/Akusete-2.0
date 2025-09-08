@@ -1,0 +1,74 @@
+.quienes-somos-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  min-height: 70vh;
+  background-color: #c2d0ff;
+  background-image: url('../assets/bg-QS.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.containerQS {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+}
+
+.quienes-somos-content {
+  flex: 1 1 300px;
+  color: #191650;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.quienes-somos-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.imagenQS {
+  flex: 1 1 400px;
+  max-width: 750px;
+  border-radius: 12px;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+
+.main-image {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.containerbotonQS {
+  display: flex;
+  justify-content: start;
+  margin-top: 2rem;
+}
+
+@media (max-width: 868px) {
+  .containerQS {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .quienes-somos-content {
+    flex: 1 1 auto;
+  }
+
+  .imagenQS {
+    margin-top: 2rem;
+  }
+
+  .containerbotonQS {
+  justify-content: center;
+}
+}

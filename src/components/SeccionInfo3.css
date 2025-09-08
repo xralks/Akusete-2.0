@@ -1,0 +1,63 @@
+.seccion-una-plataforma3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  min-height: 70vh;
+  background-image: url('../assets/bg-estrellas2.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container-una-plataforma3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+}
+
+.una-plataforma-contenido3 {
+  flex: 1 1 300px;
+  color: #191650;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.una-plataforma-contenido3 h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.imagen-una-plataforma3 {
+  flex: 1 1 400px;
+  max-width: 750px;
+  border-radius: 12px;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+
+.main-image {
+  width: 100%;
+  border-radius: 12px;
+}
+
+@media (max-width: 868px) {
+  .ontainer-una-plataforma3 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .una-plataforma-contenido3 {
+    flex: 1 1 auto;
+  }
+
+  .imagen-una-plataforma3 {
+    margin-top: 2rem;
+  }
+}

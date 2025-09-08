@@ -1,0 +1,43 @@
+  .footer {
+    background-color: #1e1e4b;
+    color: white;
+    padding: 20px;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+  }
+
+  .logo {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  .description {
+    max-width: 300px;
+    margin: 10px 0;
+  }
+
+  .social-icons1 {
+    display: flex;
+    gap: 10px;
+  }
+
+  .icon1 {
+    width: 24px;
+    height: 24px;
+  }
+
+  .copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+    font-size: 14px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }

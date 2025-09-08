@@ -1,0 +1,131 @@
+.seccion-portada-aku {
+  background-color: #4332de;
+  padding: 3rem 2rem 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 21vw;
+}
+
+.contenido-portada-aku {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.imagen-aku img {
+  width: 100%;
+  max-width: 650px;
+  z-index: 1;
+  animation: slideUp 1.2s ease-out forwards;
+  opacity: 0;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.texto-aku {
+  color: white;
+  flex: 1;
+  position: relative;
+  padding-bottom: 10px;
+  animation: slideorizontal 1.2s ease-out forwards;
+}
+
+.texto-aku h2 {
+  font-size: 3.9rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.texto-aku strong {
+  font-weight: 700;
+}
+
+.container-texto {
+  margin-top: 1.5rem;
+  background-color: white;
+  color: #191650;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  transition: transform 0.3s ease;
+  max-width: 150px;
+}
+
+.mano-pointer {
+  background-image: url('../assets/akusete3d.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 60px;
+  position: absolute;
+  right: 20px;
+  bottom: 1px;
+  transform: rotate(10deg);
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideorizontal {
+  0% {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+  @media (max-width: 1366px) {
+  .seccion-portada-aku {
+    min-height: 30vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenido-portada-aku {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .imagen-aku img {
+    width: 200px;
+  }
+
+  .texto-aku {
+    position: static;
+  }
+
+  .mano-pointer {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    margin: 1rem auto 0;
+    transform: none;
+  }
+
+  .container-texto {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .imagen-aku img {
+  display: none;
+}
+}

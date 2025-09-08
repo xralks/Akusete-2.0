@@ -1,0 +1,122 @@
+.login-seccion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  min-height: 75vh;
+  background-image: url('../assets/bg-estrellas.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.login-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.container-ilustracion {
+  flex: 1 1 400px;
+  max-width: 500px;
+  border-radius: 12px;
+  background-image: url('../assets/bg-login.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.main-image {
+  width: 100%;
+  border-radius: 12px;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+}
+
+.login-container form {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.login-container h2 {
+  font-size: 2rem;
+  color: #282689;
+}
+
+.login-container .texto-bv {
+  color: #191650;
+  margin-bottom: 1rem;
+}
+
+.login-container input {
+  font-family: "Onest", sans-serif;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid #2a25ae;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-container input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.login-container input.error {
+  border-color: #e74c3c;
+}
+.login-container button {
+  font-family: "Onest", sans-serif;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background-color: #2A25AE;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.login-container button:hover {
+  transform: translateY(-1px);
+  background-color: #444BFF;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+.login-container .texto-footer {
+  margin-top: 1rem;
+  color: #191650;
+}
+
+.login-container a {
+  color: #272689;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 868px) {
+  .login-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .login-container form {
+    flex: 1 1 auto;
+    width: 100%;
+    padding: 10px;
+  }
+}

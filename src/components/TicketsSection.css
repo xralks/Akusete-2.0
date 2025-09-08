@@ -1,0 +1,31 @@
+.tickets-section {
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background: #eaf0ff;
+  max-width: 1200px;
+  min-height: 70vh;
+}
+
+.tickets-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e1e50;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.tickets-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  padding: 0 1rem;
+}
+
+.containerboton {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
