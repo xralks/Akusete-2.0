@@ -167,7 +167,7 @@ const Navbar = () => {
                 </div>
               )}
             </li>
-            <li className="mobile-only"><Link to="/perfil" onClick={closeAllMenus}>Ver Datos</Link></li>
+            <li className="mobile-only"><Link to="/usuario" onClick={closeAllMenus}>Ver Datos</Link></li>
             <li className="mobile-only">
               <button onClick={handleLogout} className="logout-button mobile-logout">Cerrar Sesión</button>
             </li>
