@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabaseClient';
 import { useNavigate } from 'react-router-dom';
 import './perfil.css';
-import avatarDefault from '../assets/react.svg';
+import avatarDefault from '../assets/akuperfil.webp';
 
 const Perfil = () => {
   const [datosUsuario, setDatosUsuario] = useState({
