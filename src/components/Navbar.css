@@ -427,3 +427,13 @@
     width: auto;
   }
 }
+
+@media (max-height: 670px) {
+  .navbar-menu.active {
+    padding: 40px;
+    justify-content: center;
+  }
+  .navbar-menu.active li {
+    margin: 10px;
+  }
+}

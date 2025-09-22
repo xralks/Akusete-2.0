@@ -9,9 +9,12 @@ const Navbar = () => {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [profile, setProfile] = useState(null);
   const [loadingProfile, setLoadingProfile] = useState(false);
+  const [userType, setUserType] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const { user } = useAuth();
   const userMenuRef = useRef(null);
+  const dropdownRef = useRef(null);
 
   const toggleMenu = () => setIsOpen((v) => !v);
   const toggleUserMenu = () => setIsUserMenuOpen((v) => !v);
@@ -19,6 +22,27 @@ const Navbar = () => {
     setIsOpen(false);
     setIsUserMenuOpen(false);
   };
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= 768; 
+      setIsMobile(mobile);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (dropdownRef.current) {
+      if (isMobile) {
+        dropdownRef.current.setAttribute('hidden', '');
+      } else {
+        dropdownRef.current.removeAttribute('hidden');
+      }
+    }
+  }, [isMobile]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -34,24 +58,46 @@ const Navbar = () => {
     const fetchProfile = async () => {
       if (!user?.id) {
         setProfile(null);
+        setUserType(null);
         return;
       }
       try {
         setLoadingProfile(true);
-        const { data, error } = await supabase
+
+        const { data: profileData, error: profileError } = await supabase
           .from('profiles')
-          .select('full_name, username, avatar_url')
+          .select('full_name, username, avatar_url, id_tipo_usuario')
           .eq('id', user.id)
           .single();
-        if (error) {
-          console.warn('No se pudo obtener profile:', error.message);
+        
+        if (profileError) {
+          console.warn('No se pudo obtener profile:', profileError.message);
           setProfile(null);
+          setUserType(null);
         } else {
-          setProfile(data);
+          setProfile(profileData);
+
+          if (profileData.id_tipo_usuario) {
+            const { data: tipoData, error: tipoError } = await supabase
+              .from('tipo_usuario')
+              .select('nombre_tipo_usuario')
+              .eq('id', profileData.id_tipo_usuario)
+              .single();
+            
+            if (tipoError) {
+              console.warn('Error obteniendo tipo de usuario:', tipoError.message);
+              setUserType(null);
+            } else {
+              setUserType(tipoData?.nombre_tipo_usuario || null);
+            }
+          } else {
+            setUserType(null);
+          }
         }
       } catch (err) {
         console.error('Error cargando profile:', err);
         setProfile(null);
+        setUserType(null);
       } finally {
         setLoadingProfile(false);
       }
@@ -95,6 +141,10 @@ const Navbar = () => {
     return { type: 'initials', initials, backgroundColor: colors[colorIndex] };
   };
 
+  const isAdmin = () => {
+    return userType?.toLowerCase().trim() === 'administrador';
+  };
+
   const avatar = getUserAvatar();
 
   return (
@@ -112,7 +162,7 @@ const Navbar = () => {
 
       <ul className={`navbar-menu ${isOpen ? 'active' : ''}`}>
         <li><Link to="/que-es-akusete" onClick={closeAllMenus}>Qué es akusete</Link></li>
-        <li className="dropdown">
+        <li className="dropdown" ref={dropdownRef}>
           <span className="dropdown-trigger">Tickets</span>
           <ul className="dropdown-menu submenu">
             <li><Link to="/crear-ticket" onClick={closeAllMenus}>Crear Tickets</Link></li>
@@ -158,6 +208,14 @@ const Navbar = () => {
                     </svg>
                     Ver Datos
                   </Link>
+                  {isAdmin() && (
+                    <Link to="/resolver-problemas" onClick={closeAllMenus} className="user-dropdown-item">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.5 1L5.5 7.5L11.5 14L13 12.5L8.5 8H22V6H8.5L13 1.5L11.5 1ZM2 4V18H4V6H16V4H2Z"/>
+                      </svg>
+                      Resolver Problemas
+                    </Link>
+                  )}
                   <button onClick={handleLogout} className="user-dropdown-item logout-item">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.59L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
@@ -168,6 +226,9 @@ const Navbar = () => {
               )}
             </li>
             <li className="mobile-only"><Link to="/usuario" onClick={closeAllMenus}>Ver Datos</Link></li>
+            {isAdmin() && (
+              <li className="mobile-only"><Link to="/resolver-problemas" onClick={closeAllMenus}>Problemas</Link></li>
+            )}
             <li className="mobile-only">
               <button onClick={handleLogout} className="logout-button mobile-logout">Cerrar Sesión</button>
             </li>
