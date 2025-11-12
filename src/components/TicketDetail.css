@@ -224,13 +224,13 @@
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-.tags-container {
+.tags-container-modal {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.tag {
+.tag-modal {
   display: inline-block;
   padding: 6px 12px;
   background: #edf2f7;

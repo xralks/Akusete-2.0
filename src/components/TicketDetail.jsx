@@ -225,9 +225,9 @@ const TicketDetail = ({ ticketId, onClose }) => {
             {ticket.tickets_tags && ticket.tickets_tags.length > 0 && (
               <div className="info-row">
                 <label>Tags:</label>
-                <div className="tags-container">
+                <div className="tags-container-modal">
                   {ticket.tickets_tags.map((tag, index) => (
-                    <span key={index} className="tag">
+                    <span key={index} className="tag-modal">
                       🏷️ {tag.tags?.nombre_tags}
                     </span>
                   ))}
