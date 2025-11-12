@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { supabase } from '../lib/supabaseClient';
+import { useAuth } from '../../context/AuthContext';
+import { supabase } from '../../lib/supabaseClient';
 import { useNavigate } from 'react-router-dom';
 import './CrearTicket-Comp.css';
 
