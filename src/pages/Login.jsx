@@ -1,4 +1,3 @@
-// src/pages/Login.jsx
 import { useState } from 'react'
 import { supabase } from '../lib/supabaseClient';
 import { useNavigate } from 'react-router-dom';
@@ -70,7 +69,7 @@ export default function Login() {
           )}
 
           <p className='texto-footer'>¿No tienes una cuenta? <a href="/registro">Regístrate aquí</a></p>
-          <p className='texto-footer'>¿Olvidaste tu contraseña? <a href="/reset-password">Recuperar contraseña</a></p>
+          <p className='texto-footer'>¿Olvidaste tu contraseña? <a href="/recuperar-contraseña">Recuperar contraseña</a></p>
         </form>
       </div>
     </section>
